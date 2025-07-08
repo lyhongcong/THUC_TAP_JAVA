@@ -22,12 +22,12 @@ public class Main {
         }
 
         // Thử tạo deadlock và giải thích
-        System.out.println("\n💥 Giả lập deadlock:");
+        System.out.println("\n Giả lập deadlock:");
         DeadlockSimulator.createDeadlock(bank.getAccounts().get(0), bank.getAccounts().get(1));
         Thread.sleep(500);
 
         // Báo cáo
         ReportGenerator.generate(bank);
-        System.out.println("✅ Tổng số giao dịch thành công: " + bank.getSuccessfulTransactions());
+        System.out.println("Tổng số giao dịch thành công: " + bank.getSuccessfulTransactions());
     }
 }

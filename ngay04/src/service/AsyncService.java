@@ -7,7 +7,7 @@ public class AsyncService {
         CompletableFuture.runAsync(() -> {
             try {
                 Thread.sleep(50); // Mô phỏng chậm
-                System.out.println("📧 Email sent: " + message);
+                System.out.println("- Email sent: " + message);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

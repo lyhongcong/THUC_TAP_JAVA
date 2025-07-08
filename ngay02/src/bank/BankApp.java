@@ -10,14 +10,14 @@ public class BankApp {
 
     public static void main(String[] args) {
         while (true) {
-            System.out.println("\n=== Bank Management System ===");
-            System.out.println("1. Create Savings Account");
-            System.out.println("2. Create Current Account");
-            System.out.println("3. Deposit");
-            System.out.println("4. Withdraw");
-            System.out.println("5. View Account Info");
-            System.out.println("6. Exit");
-            System.out.print("Choose an option: ");
+            System.out.println("\n=== HỆ THỐNG QUẢN LÝ NGÂN HÀNG ===");
+            System.out.println("1. Tạo tài khoản tiết kiệm");
+            System.out.println("2. Tạo tài khoản thanh toán");
+            System.out.println("3. Gửi tiền");
+            System.out.println("4. Rút tiền");
+            System.out.println("5. Xem thông tin tài khoản");
+            System.out.println("6. Thoát");
+            System.out.print("Chọn một chức năng: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // Xóa bộ đệm
@@ -39,98 +39,98 @@ public class BankApp {
                     viewAccountInfo();
                     break;
                 case 6:
-                    System.out.println("Exiting...");
+                    System.out.println("Đang thoát chương trình...");
                     scanner.close();
                     return;
                 default:
-                    System.out.println("Invalid option");
+                    System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn lại!");
             }
         }
     }
 
     private static void createSavingsAccount() {
-        System.out.print("Enter ID: ");
+        System.out.print("Nhập ID: ");
         String id = scanner.nextLine();
-        System.out.print("Enter Full Name: ");
+        System.out.print("Nhập Họ và Tên: ");
         String fullName = scanner.nextLine();
-        System.out.print("Enter Email: ");
+        System.out.print("Nhập Email: ");
         String email = scanner.nextLine();
-        System.out.print("Enter Phone Number: ");
+        System.out.print("Nhập Số điện thoại: ");
         String phoneNumber = scanner.nextLine();
-        System.out.print("Enter Account Number: ");
+        System.out.print("Nhập Số tài khoản: ");
         String accountNumber = scanner.nextLine();
-        System.out.print("Enter Initial Balance: ");
+        System.out.print("Nhập Số dư ban đầu: ");
         double initialBalance = scanner.nextDouble();
-        System.out.print("Enter Interest Rate: ");
+        System.out.print("Nhập Lãi suất (%): ");
         double interestRate = scanner.nextDouble();
         scanner.nextLine();
 
         Person person = new Person(id, fullName, email, phoneNumber);
         BankAccount account = new SavingsAccount(accountNumber, person, initialBalance, LocalDate.now(), interestRate);
         accounts.add(account);
-        System.out.println("Savings Account created successfully!");
+        System.out.println("Tạo tài khoản tiết kiệm thành công!");
     }
 
     private static void createCurrentAccount() {
-        System.out.print("Enter ID: ");
+        System.out.print("Nhập ID: ");
         String id = scanner.nextLine();
-        System.out.print("Enter Full Name: ");
+        System.out.print("Nhập Họ và Tên: ");
         String fullName = scanner.nextLine();
-        System.out.print("Enter Email: ");
+        System.out.print("Nhập Email: ");
         String email = scanner.nextLine();
-        System.out.print("Enter Phone Number: ");
+        System.out.print("Nhập Số điện thoại: ");
         String phoneNumber = scanner.nextLine();
-        System.out.print("Enter Account Number: ");
+        System.out.print("Nhập Số tài khoản: ");
         String accountNumber = scanner.nextLine();
-        System.out.print("Enter Initial Balance: ");
+        System.out.print("Nhập Số dư ban đầu: ");
         double initialBalance = scanner.nextDouble();
-        System.out.print("Enter Overdraft Limit: ");
+        System.out.print("Nhập Hạn mức thấu chi: ");
         double overdraftLimit = scanner.nextDouble();
         scanner.nextLine();
 
         Person person = new Person(id, fullName, email, phoneNumber);
         BankAccount account = new CurrentAccount(accountNumber, person, initialBalance, LocalDate.now(), overdraftLimit);
         accounts.add(account);
-        System.out.println("Current Account created successfully!");
+        System.out.println("Tạo tài khoản thanh toán thành công!");
     }
 
     private static void performDeposit() {
-        System.out.print("Enter Account Number: ");
+        System.out.print("Nhập Số tài khoản: ");
         String accountNumber = scanner.nextLine();
         BankAccount account = findAccount(accountNumber);
         if (account != null) {
-            System.out.print("Enter Deposit Amount: ");
+            System.out.print("Nhập Số tiền gửi: ");
             double amount = scanner.nextDouble();
             scanner.nextLine();
             account.deposit(amount);
         } else {
-            System.out.println("Account not found");
+            System.out.println("Không tìm thấy tài khoản!");
         }
     }
 
     private static void performWithdraw() {
-        System.out.print("Enter Account Number: ");
+        System.out.print("Nhập Số tài khoản: ");
         String accountNumber = scanner.nextLine();
         BankAccount account = findAccount(accountNumber);
         if (account != null) {
-            System.out.print("Enter Withdraw Amount: ");
+            System.out.print("Nhập Số tiền rút: ");
             double amount = scanner.nextDouble();
             scanner.nextLine();
             account.withdraw(amount);
         } else {
-            System.out.println("Account not found");
+            System.out.println("Không tìm thấy tài khoản!");
         }
     }
 
     private static void viewAccountInfo() {
-        System.out.print("Enter Account Number: ");
+        System.out.print("Nhập Số tài khoản: ");
         String accountNumber = scanner.nextLine();
         BankAccount account = findAccount(accountNumber);
         if (account != null) {
             account.printAccountInfo();
             account.printSummary();
         } else {
-            System.out.println("Account not found");
+            System.out.println("Không tìm thấy tài khoản!");
         }
     }
 
