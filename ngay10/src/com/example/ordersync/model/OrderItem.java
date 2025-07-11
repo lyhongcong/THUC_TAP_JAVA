@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.ordersync.model;
 
 public class OrderItem {
     private String productId;
@@ -13,7 +13,5 @@ public class OrderItem {
         this.price = price;
     }
 
-    public String getProductId() { return productId; }
-    public int getQuantity() { return quantity; }
-    public double getPrice() { return price; }
+    // getters & setters
 }
