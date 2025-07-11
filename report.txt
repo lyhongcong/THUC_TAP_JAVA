@@ -1,0 +1,16 @@
+1001 - Customer1: 2 stars
+1002 - Customer2: 3 stars
+1003 - Customer3: 4 stars
+1004 - Customer4: 5 stars
+1005 - Customer5: 1 stars
+1006 - Customer6: 2 stars
+1007 - Customer7: 3 stars
+1008 - Customer8: 4 stars
+1009 - Customer9: 5 stars
+1010 - Customer10: 1 stars
+
+--- ANALYSIS ---
+Average Rating: 3.0
+Negative Feedbacks (<3): 4
+Grouped by Rating: {1=2, 2=2, 3=2, 4=2, 5=2}
+Partitioned Positive/Negative: {false=[1001,Customer1,2,"Sample comment 1", 1002,Customer2,3,"Sample comment 2", 1005,Customer5,1,"Sample comment 5", 1006,Customer6,2,"Sample comment 6", 1007,Customer7,3,"Sample comment 7", 1010,Customer10,1,"Sample comment 10"], true=[1003,Customer3,4,"Sample comment 3", 1004,Customer4,5,"Sample comment 4", 1008,Customer8,4,"Sample comment 8", 1009,Customer9,5,"Sample comment 9"]}
